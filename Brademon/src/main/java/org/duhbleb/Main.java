@@ -7,8 +7,8 @@ import net.dv8tion.jda.JDABuilder;
 public class Main {
 
 	public static String versionNumber = "0.0.0.1a";
-	public static String email = "dr.trill.phd@gmail.com";
-	public static String password = "theverybest";
+	public static String email = "-----";
+	public static String password = "-----";
 	
 	public static String homeChannel = "brad-e-mon";
 	
