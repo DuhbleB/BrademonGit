@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Manifest-Version: 1.0
 Built-By: birdg
 Build-Jdk: 1.8.0_77
 Created-By: Maven Integration for Eclipse
 
+=======
+Manifest-Version: 1.0
+Built-By: birdg
+Build-Jdk: 1.8.0_77
+Created-By: Maven Integration for Eclipse
+
+>>>>>>> 0f27edaf01edcd3f42f22f835be5df911dada312
