@@ -41,9 +41,13 @@ public class Brain {
 		listenTarget = ListenTarget.idle;
 		messageReceiveMode = MessageReceiveMode.utility;
 		
-		sendMessage(Main.homeChannel, "Connected and initialized!\n Brad-e-mon version: " + Main.versionNumber);
-		sendMessage(Main.homeChannel, "My callsign is '$'.");
-		sendMessage(Main.homeChannel, "Use 'commands' to get a cheat sheet.");
+		sendMessage(Main.homeChannel, new MessageBuilder()
+				.appendCodeBlock("Connected and initialized!\n Brad-e-mon version: " + Main.versionNumber
+						+ "\nMy callsign is '$'."
+						+ "\nUse 'commands' to get a cheat sheet."
+						, "java")
+				.build().toString()
+				);
 	}
 	
 	public void doMessageReceivedEvent(MessageReceivedEvent e){
@@ -180,10 +184,13 @@ public class Brain {
 				break;
 				
 			case "commands":
-			
-				sendMessage(Main.homeChannel, "Commands are: \n 'switchmodes' \n 'insultgeneralchat' \n 'alive' \n 'clearchat' \n 'diagnostics' \n 'killself'");
-				sendMessage(Main.homeChannel, "Listener commands are: \n 'changeoutputchannel' \n 'say' \n 'sayuntilstoplistening'");
-				sendMessage(Main.homeChannel, "While listening, type 'stoplistening' to return to idle");
+				
+				sendMessage(Main.homeChannel, new MessageBuilder()
+						.appendCodeBlock("Commands are: \n 'switchmodes' \n 'insultgeneralchat' \n 'alive' \n 'clearchat' \n 'diagnostics' \n 'killself'"
+								+ "Listener commands are: \n 'changeoutputchannel' \n 'say' \n 'sayuntilstoplistening'"
+								+ "While listening, type 'stoplistening' to return to idle", "java")
+						.build().toString()
+						);
 				break;	
 				
 			default:
