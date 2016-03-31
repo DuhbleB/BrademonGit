@@ -27,12 +27,15 @@ public class Main {
 
 		try {
 
-			brain.jda = new JDABuilder(email, password).addListener(brain.interpreter).buildAsync();
+			brain.jda = new JDABuilder(email, password).addListener(brain.interpreter).buildBlocking();
 		}catch(LoginException | IllegalArgumentException e){
 
 			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-
+		brain.jda.getAccountManager().setGame("Version:" + versionNumber);
 		brain.goLive();
 	}
 

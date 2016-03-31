@@ -42,14 +42,17 @@ public class Brain {
 		messageReceiveMode = MessageReceiveMode.utility;
 		
 		sendMessage(Main.homeChannel, new MessageBuilder()
-				.appendCodeBlock("Connected and initialized!\n Brad-e-mon version: " + Main.versionNumber
+				.appendCodeBlock("Connected and initialized!"
+						+ "\nBrad-e-mon version: " + Main.versionNumber
 						+ "\nMy callsign is '$'."
 						+ "\nUse 'commands' to get a cheat sheet."
-						, "java")
-				.build().toString()
+						, "python")
+				.build()
 				);
 	}
 	
+
+
 	public void doMessageReceivedEvent(MessageReceivedEvent e){
 		
 		String input = e.getMessage().getRawContent();
@@ -187,9 +190,9 @@ public class Brain {
 				
 				sendMessage(Main.homeChannel, new MessageBuilder()
 						.appendCodeBlock("Commands are: \n 'switchmodes' \n 'insultgeneralchat' \n 'alive' \n 'clearchat' \n 'diagnostics' \n 'killself'"
-								+ "Listener commands are: \n 'changeoutputchannel' \n 'say' \n 'sayuntilstoplistening'"
-								+ "While listening, type 'stoplistening' to return to idle", "java")
-						.build().toString()
+								+ "\nListener commands are: \n 'changeoutputchannel' \n 'say' \n 'sayuntilstoplistening'"
+								+ "\nWhile listening, type 'stoplistening' to return to idle", "python")
+						.build()
 						);
 				break;	
 				
@@ -423,6 +426,11 @@ public class Brain {
 		Message message = new MessageBuilder().appendString(content).build();
 		
 		jda.getTextChannelsByName(channelName).get(0).sendMessage(message);
+	}
+	
+	private void sendMessage(String homeChannel, Message build) {
+		// TODO Auto-generated method stub
+		jda.getTextChannelsByName(homeChannel).get(0).sendMessage(build);
 	}
 	
 	public void clearChat(){
